@@ -17,10 +17,9 @@ const app = express();
 app.use(bodyParser.json());
 
 const connectionString =
-  process.env.NOTIFICATIONHUBS_CONNECTION_STRING ||
-  "Endpoint=sb://sbx-montreal-pushnotification.servicebus.windows.net/;SharedAccessKeyName=infoneige_pushnotification;SharedAccessKey=gfZoFM1iGe6GHwQ4NKykgGe4CxZ7ChvLruHqUDYIpag=";
+  process.env.NOTIFICATIONHUBS_CONNECTION_STRING:
 
-const hubName = process.env.NOTIFICATION_HUB_NAME || "info-neige";
+const hubName = process.env.NOTIFICATION_HUB_NAME;
 
 const context = createClientContext(connectionString, hubName);
 
